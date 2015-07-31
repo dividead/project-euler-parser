@@ -1,4 +1,4 @@
-dump of 512 problems wo answers
+dump of 512 project euler problems (without answers)
 
 completion time ~3min
 
