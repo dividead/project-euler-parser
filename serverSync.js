@@ -2,7 +2,7 @@ var https = require('https');
 var fs = require('fs');
 
 var eu = {};
-
+console.time('done');
 function nextreq(id){
   https.get("https://projecteuler.net/problem=" + id, function(res) {
   var str = '';
@@ -24,11 +24,10 @@ function nextreq(id){
     else {
       fs.writeFile('euler.json', JSON.stringify(eu, null, 4), function(err) {
         if(err) console.log(err);
-        console.log('finished in ', (new Date - start)/1000, 's');
+        console.timeEnd('done');
       })
     }
   })
 });
 }
-var start = new Date;
 nextreq(1)
